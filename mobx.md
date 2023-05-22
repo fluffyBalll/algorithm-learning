@@ -22,6 +22,12 @@ mobx-react 定义一个 class 来存储状态和reducer,这个类
 const stores = createContext({
     counter: new Counter(),
 })
+```
+组件在使用store之前，需要用observer 这个api将组件包装
+```javascript
+    import { observer } from "mobx-react-lite" // Or "mobx-react".
+    export observer(<MyComponent/>);
+```
 
 然后在组件中使用context
 const state = useContext(stores)
