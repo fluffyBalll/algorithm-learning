@@ -23,12 +23,15 @@ const stores = createContext({
     counter: new Counter(),
 })
 ```
-组件在使用store之前，需要用observer 这个api将组件包装
+组件在使用store之前，需要用observer 这个api将组件(可被观察的对象)包装
+这样组件才能响应式更新
 ```javascript
     import { observer } from "mobx-react-lite" // Or "mobx-react".
-    export observer(<MyComponent/>);
+    export observer(() => <MyComponent/>);
 ```
 
 然后在组件中使用context
+```javascript
 const state = useContext(stores)
 ```
+
