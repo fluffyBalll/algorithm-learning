@@ -1,0 +1,1 @@
+使用pnpm安装express之后，根目录下的node_modules会有.pnpm 和 express 两个文件夹
