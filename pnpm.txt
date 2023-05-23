@@ -1,1 +1,6 @@
-使用pnpm安装express之后，根目录下的node_modules会有.pnpm 和 express 两个文件夹
+1.使用pnpm安装express之后，根目录下的node_modules会有.pnpm 和 express 两个文件夹
+2.打kai.pnpm目录，express的直接依赖和间接依赖都被提升到了这一级目录，express自身也存在于这级目录
+3.这些都不是真正的文件，而是指向依赖存在的位置（.pnpm store 一个隐藏的文件）的硬链接，
+4.所有的深层依赖都会放在，同一级目录，例如
+    .pnpm/express/@foo .pnpm/express/@bar .pnpm/express/@jar  
+5.express包的实际位置 .pnpm/express/node_modules/express
